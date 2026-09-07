@@ -1,0 +1,1009 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windows 98 theme</title>
+    <style>
+        /* Windows 98 Retro Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'MS Sans Serif', 'Arial', sans-serif;
+            background-image: url('https://denpalayouts.neocities.org/vw6.png'), repeat;
+            background-color: #008080;
+            color: #000;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Desktop Icons */
+        .desktop-icons {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 80px);
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .desktop-icon {
+            width: 80px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 0 #000;
+            cursor: pointer;
+            user-select: none;
+            padding: 5px;
+        }
+
+        .desktop-icon:hover {
+            background: rgba(0, 0, 128, 0.5);
+            border: 1px dotted white;
+        }
+
+        .desktop-icon img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+            filter: drop-shadow(2px 2px 0 #000);
+        }
+
+        .icon-label {
+            font-size: 12px;
+            word-break: break-word;
+        }
+
+        /* Windows */
+        .window {
+            position: absolute;
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #dfdfdf #404040 #404040 #dfdfdf;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            min-width: 300px;
+            min-height: 200px;
+            resize: both;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .window.maximized {
+            width: calc(100% - 40px) !important;
+            height: calc(100% - 80px) !important;
+            top: 20px !important;
+            left: 20px !important;
+            resize: none;
+        }
+
+        .window.minimized {
+            display: none;
+        }
+
+        /* Window Title Bar */
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 3px 5px;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: move;
+            user-select: none;
+            height: 22px;
+        }
+
+        .title-text {
+            padding-left: 5px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 3px;
+        }
+
+        .window-btn {
+            width: 18px;
+            height: 16px;
+            background: #c0c0c0;
+            border: 1px solid;
+            border-color: #dfdfdf #404040 #404040 #dfdfdf;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .window-btn:hover {
+            background: #d0d0d0;
+        }
+
+        .window-btn:active {
+            border-color: #404040 #dfdfdf #dfdfdf #404040;
+        }
+
+        /* Window Content */
+        .window-content {
+            padding: 15px;
+            background: #c0c0c0;
+            height: calc(100% - 22px);
+            overflow-y: auto;
+        }
+
+        .window-content-inner {
+            background: #fff;
+            border: 2px inset #c0c0c0;
+            padding: 15px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Windows 98 Styled Elements */
+        .win98-btn {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #dfdfdf #404040 #404040 #dfdfdf;
+            padding: 5px 15px;
+            font-family: 'MS Sans Serif', 'Arial', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            min-width: 75px;
+        }
+
+        .win98-btn:hover {
+            background: #d0d0d0;
+        }
+
+        .win98-btn:active {
+            border-color: #404040 #dfdfdf #dfdfdf #404040;
+        }
+
+        .win98-input {
+            background: #fff;
+            border: 2px inset #c0c0c0;
+            padding: 5px;
+            font-family: 'MS Sans Serif', 'Arial', sans-serif;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .win98-checkbox {
+            width: 15px;
+            height: 15px;
+            background: #c0c0c0;
+            border: 2px inset #c0c0c0;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Taskbar */
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #c0c0c0;
+            border-top: 2px solid #dfdfdf;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            z-index: 1000;
+        }
+
+        .start-btn {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #dfdfdf #404040 #404040 #dfdfdf;
+            padding: 5px 15px;
+            font-family: 'MS Sans Serif', 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            height: 32px;
+        }
+
+        .start-btn img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .taskbar-items {
+            display: flex;
+            gap: 5px;
+            margin-left: 10px;
+            flex-grow: 1;
+            overflow-x: auto;
+        }
+
+        .taskbar-item {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #dfdfdf #404040 #404040 #dfdfdf;
+            padding: 5px 10px;
+            font-size: 12px;
+            white-space: nowrap;
+            cursor: pointer;
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .taskbar-item.active {
+            border-color: #404040 #dfdfdf #dfdfdf #404040;
+        }
+
+        .system-tray {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 10px;
+            height: 100%;
+            border-left: 2px solid #404040;
+            font-size: 12px;
+        }
+
+        /* Folder Structure */
+        .folder {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+            border: 1px dotted transparent;
+        }
+
+        .folder:hover {
+            background: #000080;
+            color: white;
+            border: 1px dotted white;
+        }
+
+        .folder-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .folder-content {
+            display: none;
+            margin-left: 20px;
+            padding-left: 10px;
+            border-left: 1px dotted #c0c0c0;
+        }
+
+        .folder.open .folder-content {
+            display: block;
+        }
+
+        /* Control Panel Items */
+        .control-panel-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #c0c0c0;
+            cursor: pointer;
+        }
+
+        .control-panel-item:hover {
+            background: #000080;
+            color: white;
+        }
+
+        .cp-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            width: 40px;
+            text-align: center;
+        }
+
+        /* Program Files Grid */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .program-item {
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .program-item:hover {
+            background: #000080;
+            color: white;
+        }
+
+        .program-icon {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #c0c0c0;
+            border: 2px inset #c0c0c0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #dfdfdf #404040 #404040 #dfdfdf;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d0d0d0;
+        }
+
+        /* Utility Classes */
+        .flex {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .mt-10 { margin-top: 10px; }
+        .mb-10 { margin-bottom: 10px; }
+        .ml-10 { margin-left: 10px; }
+        .text-center { text-align: center; }
+        .hidden { display: none; }
+        .block { display: block; }
+        .inline-block { display: inline-block; }
+
+        /* Status Bar */
+        .status-bar {
+            background: #c0c0c0;
+            border-top: 2px inset #c0c0c0;
+            padding: 3px 10px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Icons - Now 8 icons -->
+    <div class="desktop-icons">
+        <div class="desktop-icon" onclick="openWindow('my-computer')">
+            <div>💻</div>
+            <div class="icon-label">click me!</div>
+        </div>
+        <div class="desktop-icon" onclick="openWindow('my-documents')">
+            <div>📁</div>
+            <div class="icon-label">My Documents</div>
+        </div>
+        <div class="desktop-icon" onclick="openWindow('recycle-bin')">
+            <div>🗑️</div>
+            <div class="icon-label">about</div>
+        </div>
+        <div class="desktop-icon" onclick="openWindow('control-panel')">
+            <div>⚙️</div>
+            <div class="icon-label">Control Panel</div>
+        </div>
+        <div class="desktop-icon" onclick="openWindow('internet-explorer')">
+            <div>🌐</div>
+            <div class="icon-label">likes and dislikes</div>
+        </div>
+        <div class="desktop-icon" onclick="openWindow('program-files')">
+            <div>📂</div>
+            <div class="icon-label">Program Files</div>
+        </div>
+        <div class="desktop-icon" onclick="openWindow('notepad')">
+            <div>📝</div>
+            <div class="icon-label">favorites</div>
+        </div>
+    </div>
+
+    <!-- Existing Windows -->
+    <div class="window" id="my-computer-window" style="top: 107px; left: 275px; width: 400px; height: 400px;">
+        <div class="title-bar" id="my-computer-title">
+            <div class="title-text">💻 welcome!</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('my-computer')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('my-computer')">□</button>
+                <button class="window-btn" onclick="closeWindow('my-computer')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <h3>welcome!</h3>
+                        <div style="font-size: 12px;"><br>this is a mobile-friendly reactive windows 98 desktop theme. you can open, close, and drag windows around. feel free to use "inspect element" to steal this code!<br>
+                        <p><img src="https://denpalayouts.neocities.org/lain.gif" style="max-width: 150px"></p>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-content">
+                    <div class="folder" onclick="alert('Windows folder opened')">
+                        <div class="folder-icon">📁</div>
+                        <div>Windows</div>
+                    </div>
+                    <div class="folder" onclick="alert('Program Files folder opened')">
+                        <div class="folder-icon">📁</div>
+                        <div>Program Files</div>
+                    </div>
+                </div>
+                <div class="folder" onclick="toggleFolder(this)">
+                    <div class="folder-icon">💿</div>
+                    <div>
+                        <div>CD Drive (D:)</div>
+                        <div style="font-size: 12px;">Audio CD</div>
+                    </div>
+                </div>
+                <div class="folder" onclick="toggleFolder(this)">
+                    <div class="folder-icon">💿</div>
+                    <div>
+                        <div>3½ Floppy (A:)</div>
+                        <div style="font-size: 12px;">No disk</div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <button class="win98-btn" onclick="alert('Scanning for viruses... Just kidding!')">
+                        Scan for Viruses
+                    </button>
+                </div>
+                <div class="status-bar mt-10">
+                    <div>3 object(s)</div>
+                    <div>Local Disk (C:)</div>
+                </div>
+            </div>
+        
+    
+
+    <!-- My Documents Window -->
+    <div class="window hidden" id="my-documents-window" style="top: 120px; left: 150px; width: 450px; height: 350px;">
+        <div class="title-bar" id="my-documents-title">
+            <div class="title-text">📁 My Documents</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('my-documents')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('my-documents')">□</button>
+                <button class="window-btn" onclick="closeWindow('my-documents')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <h3>My Documents</h3>
+                <div class="program-grid">
+                    <div class="program-item" onclick="alert('Opening Resume.doc')">
+                        <div class="program-icon">📄</div>
+                        <div>Resume.doc</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening School Work')">
+                        <div class="program-icon">📚</div>
+                        <div>School Work</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening My Pictures')">
+                        <div class="program-icon">🖼️</div>
+                        <div>My Pictures</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening My Music')">
+                        <div class="program-icon">🎵</div>
+                        <div>My Music</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening Important Stuff')">
+                        <div class="program-icon">💾</div>
+                        <div>Important Stuff</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening Downloads')">
+                        <div class="program-icon">⬇️</div>
+                        <div>Downloads</div>
+                    </div>
+                </div>
+                <div class="flex mt-10">
+                    <button class="win98-btn" onclick="alert('New folder created!')">New Folder</button>
+                    <button class="win98-btn" onclick="alert('Searching documents...')">Search</button>
+                    <button class="win98-btn" onclick="closeWindow('my-documents')">Close</button>
+                </div>
+                <div class="status-bar mt-10">
+                    <div>6 object(s)</div>
+                    <div>123 KB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Recycle Bin Window -->
+    <div class="window hidden" id="recycle-bin-window" style="top: 150px; left: 200px; width: 350px; height: 250px;">
+        <div class="title-bar" id="recycle-bin-title">
+            <div class="title-text">🗑 about</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('recycle-bin')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('recycle-bin')">□</button>
+                <button class="window-btn" onclick="closeWindow('recycle-bin')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <h3>a little about me...</h3>
+                <br><div style="font-size: 12px;"><p>i'm a 21+ year old internet ghost! i think templates should be easier to come by because coding is hard and it makes my head hurt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Control Panel Window -->
+    <div class="window hidden" id="control-panel-window" style="top: 100px; left: 250px; width: 500px; height: 400px;">
+        <div class="title-bar" id="control-panel-title">
+            <div class="title-text">⚙️ Control Panel</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('control-panel')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('control-panel')">□</button>
+                <button class="window-btn" onclick="closeWindow('control-panel')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <h3>Control Panel</h3>
+                <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                    <div>
+                        <div class="control-panel-item" onclick="alert('Opening Display Properties')">
+                            <div class="cp-icon">🖥️</div>
+                            <div>Display</div>
+                        </div>
+                        <div class="control-panel-item" onclick="alert('Opening Sound Properties')">
+                            <div class="cp-icon">🔊</div>
+                            <div>Sounds</div>
+                        </div>
+                        <div class="control-panel-item" onclick="alert('Opening Mouse Properties')">
+                            <div class="cp-icon">🖱️</div>
+                            <div>Mouse</div>
+                        </div>
+                        <div class="control-panel-item" onclick="alert('Opening Keyboard Properties')">
+                            <div class="cp-icon">⌨️</div>
+                            <div>Keyboard</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-panel-item" onclick="alert('Opening Add/Remove Programs')">
+                            <div class="cp-icon">📦</div>
+                            <div>Add/Remove Programs</div>
+                        </div>
+                        <div class="control-panel-item" onclick="alert('Opening Date/Time Settings')">
+                            <div class="cp-icon">⏰</div>
+                            <div>Date/Time</div>
+                        </div>
+                        <div class="control-panel-item" onclick="alert('Opening Network Settings')">
+                            <div class="cp-icon">🌐</div>
+                            <div>Network</div>
+                        </div>
+                        <div class="control-panel-item" onclick="alert('Opening System Properties')">
+                            <div class="cp-icon">💻</div>
+                            <div>System</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-bar mt-10">
+                    <div>8 item(s)</div>
+                    <div>View: Category</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internet Explorer Window -->
+    <div class="window hidden" id="internet-explorer-window" style="top: 120px; left: 300px; width: 600px; height: 400px;">
+        <div class="title-bar" id="internet-explorer-title">
+            <div class="title-text">🌐 likes and dislikes</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('internet-explorer')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('internet-explorer')">□</button>
+                <button class="window-btn" onclick="closeWindow('internet-explorer')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <div style="height: 250px; overflow-y: auto; border: 2px inset #c0c0c0; margin-top: 10px; padding: 10px; background: white; font-size: 12px;">
+                    <h2>likes and dislikes</h2>
+                    <br><p>The internet is loading... Please wait while we connect via dial-up.</p>
+                    <br>
+                    <p><strong>Connection Status:</strong> Dialing... 56k modem detected</p><br>
+                    <hr>
+                    <h3>likes:</h3><br>
+                    <p>cold weather</p>
+                    <p>collecting</p>
+                    <p>info-dumping</p>
+                    <br>
+                    <h3>dislikes:</h3><br>
+                    <p>traffic jams</p>
+                    <p>working for a living</p>
+                    <p>snooty video essayists</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Program Files Window -->
+    <div class="window hidden" id="program-files-window" style="top: 140px; left: 220px; width: 550px; height: 350px;">
+        <div class="title-bar" id="program-files-title">
+            <div class="title-text">📂 Program Files</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('program-files')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('program-files')">□</button>
+                <button class="window-btn" onclick="closeWindow('program-files')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <h3>Program Files</h3>
+                <div class="program-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="program-item" onclick="alert('Opening Microsoft Office')">
+                        <div class="program-icon">📝</div>
+                        <div>Microsoft Office</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening Adobe Reader')">
+                        <div class="program-icon">📚</div>
+                        <div>Adobe Reader</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening WinZip')">
+                        <div class="program-icon">🗜️</div>
+                        <div>WinZip</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening QuickTime')">
+                        <div class="program-icon">🎬</div>
+                        <div>QuickTime</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening RealPlayer')">
+                        <div class="program-icon">🎵</div>
+                        <div>RealPlayer</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening Netscape')">
+                        <div class="program-icon">🌐</div>
+                        <div>Netscape</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening Winamp')">
+                        <div class="program-icon">🎶</div>
+                        <div>Winamp</div>
+                    </div>
+                    <div class="program-item" onclick="alert('Opening mIRC')">
+                        <div class="program-icon">💬</div>
+                        <div>mIRC</div>
+                    </div>
+                </div>
+                <div class="status-bar mt-10">
+                    <div>8 program(s)</div>
+                    <div>524 MB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Existing Notepad Window -->
+    <div class="window hidden" id="notepad-window" style="top: 200px; left: 300px; width: 450px; height: 350px;">
+        <div class="title-bar" id="notepad-title">
+            <div class="title-text">📝 favorites</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="minimizeWindow('notepad')">_</button>
+                <button class="window-btn" onclick="maximizeWindow('notepad')">□</button>
+                <button class="window-btn" onclick="closeWindow('notepad')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <textarea style="width: 100%; height: 200px; border: none; font-family: 'Courier New', monospace; font-size: 14px; resize: none;" placeholder="Type your text here...">a few of my favorite things...
+=====================
+
+&gt; ADAMS (the visual kei duo)
+&gt; dramatical murder (visual novel)
+&gt; denpa (genre, subculture)
+
+                </textarea>
+            </div>
+        </div>
+    </div>
+
+
+ 
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button class="start-btn" onclick="toggleStartMenu()">
+            <span>🪟</span>
+            Start
+        </button>
+        <div class="taskbar-items" id="taskbarItems">
+            <!-- Taskbar items will be added here dynamically -->
+        </div>
+        <div class="system-tray">
+            <div id="clock">12:33 PM</div>
+            <div>🔊</div>
+            <div>🌐</div>
+        </div>
+    </div>
+
+    <!-- Start Menu (hidden by default) -->
+    <div class="window hidden" id="start-menu" style="bottom: 40px; left: 0; width: 250px; height: 400px; position: fixed;">
+        <div class="title-bar">
+            <div class="title-text">Windows 98</div>
+            <div class="window-controls">
+                <button class="window-btn" onclick="closeWindow('start-menu')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-content-inner">
+                <div style="padding: 10px 0;">
+                    <div style="padding: 5px 10px; background: #000080; color: white; font-weight: bold;">Windows 98</div>
+                    <div style="padding: 10px;">
+                        <div onclick="openWindow('my-computer'); closeWindow('start-menu')" style="padding: 5px; cursor: pointer;">💻 click me!</div>
+                        <div onclick="openWindow('my-documents'); closeWindow('start-menu')" style="padding: 5px; cursor: pointer;">📁 My Documents</div>
+                        <div onclick="openWindow('control-panel'); closeWindow('start-menu')" style="padding: 5px; cursor: pointer;">⚙️ Control Panel</div>
+                        <div onclick="openWindow('program-files'); closeWindow('start-menu')" style="padding: 5px; cursor: pointer;">📂 Program Files</div>
+                        <hr style="margin: 10px 0; border-color: #c0c0c0;">
+                        <div onclick="openWindow('notepad'); closeWindow('start-menu')" style="padding: 5px; cursor: pointer;">📝 Notepad</div>
+                        <hr style="margin: 10px 0; border-color: #c0c0c0;">
+                        <div onclick="alert('Shutting down...')" style="padding: 5px; cursor: pointer;">⏻ Shut Down...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Window management
+        let windows = {
+            'my-computer': document.getElementById('my-computer-window'),
+            'my-documents': document.getElementById('my-documents-window'),
+            'network-neighborhood': document.getElementById('network-neighborhood-window'),
+            'recycle-bin': document.getElementById('recycle-bin-window'),
+            'control-panel': document.getElementById('control-panel-window'),
+            'internet-explorer': document.getElementById('internet-explorer-window'),
+            'program-files': document.getElementById('program-files-window'),
+            'notepad': document.getElementById('notepad-window'),
+            'start-menu': document.getElementById('start-menu')
+        };
+
+        let windowStates = {};
+        Object.keys(windows).forEach(key => {
+            windowStates[key] = 'normal';
+        });
+
+        // Draggable windows implementation
+        let draggedWindow = null;
+        let dragOffsetX = 0;
+        let dragOffsetY = 0;
+
+        // Make all windows draggable
+        document.querySelectorAll('.window').forEach(window => {
+            const titleBar = window.querySelector('.title-bar');
+            
+            titleBar.addEventListener('mousedown', function(e) {
+                // Don't start dragging if clicking on a window control button
+                if (e.target.classList.contains('window-btn')) return;
+                
+                // Don't drag maximized windows
+                if (window.classList.contains('maximized')) return;
+                
+                draggedWindow = window;
+                dragOffsetX = e.clientX - window.offsetLeft;
+                dragOffsetY = e.clientY - window.offsetTop;
+                
+                // Bring window to front
+                bringWindowToFront(window);
+                
+                // Prevent text selection during drag
+                e.preventDefault();
+            });
+        });
+
+        // Mouse move event for dragging
+        document.addEventListener('mousemove', function(e) {
+            if (!draggedWindow) return;
+            
+            // Calculate new position
+            let newLeft = e.clientX - dragOffsetX;
+            let newTop = e.clientY - dragOffsetY;
+            
+            // Keep window within viewport bounds
+            const maxLeft = window.innerWidth - draggedWindow.offsetWidth;
+            const maxTop = window.innerHeight - draggedWindow.offsetHeight - 40; // 40px for taskbar
+            
+            newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+            newTop = Math.max(0, Math.min(newTop, maxTop));
+            
+            // Apply new position
+            draggedWindow.style.left = newLeft + 'px';
+            draggedWindow.style.top = newTop + 'px';
+        });
+
+        // Mouse up event to stop dragging
+        document.addEventListener('mouseup', function() {
+            draggedWindow = null;
+        });
+
+        // Function to bring window to front
+        function bringWindowToFront(window) {
+            // Get all windows
+            const allWindows = document.querySelectorAll('.window');
+            
+            // Find the highest z-index
+            let highestZIndex = 100; // Starting z-index
+            
+            allWindows.forEach(win => {
+                const zIndex = parseInt(window.getComputedStyle(win).zIndex) || 100;
+                highestZIndex = Math.max(highestZIndex, zIndex);
+            });
+            
+            // Set the clicked window to the highest z-index + 1
+            window.style.zIndex = highestZIndex + 1;
+        }
+
+        // Window control functions
+        function openWindow(windowId) {
+            const window = windows[windowId];
+            if (!window) return;
+            
+            window.classList.remove('hidden');
+            window.classList.remove('minimized');
+            bringWindowToFront(window);
+            
+            // Add to taskbar
+            addToTaskbar(windowId);
+            
+            // Update window state
+            if (windowStates[windowId] === 'maximized') {
+                window.classList.add('maximized');
+            }
+        }
+
+        function closeWindow(windowId) {
+            const window = windows[windowId];
+            window.classList.add('hidden');
+            window.classList.remove('maximized');
+            windowStates[windowId] = 'normal';
+            
+            // Remove from taskbar
+            removeFromTaskbar(windowId);
+        }
+
+        function minimizeWindow(windowId) {
+            const window = windows[windowId];
+            window.classList.add('minimized');
+            windowStates[windowId] = 'minimized';
+            
+            // Update taskbar
+            updateTaskbarItem(windowId);
+        }
+
+        function maximizeWindow(windowId) {
+            const window = windows[windowId];
+            
+            if (windowStates[windowId] === 'maximized') {
+                window.classList.remove('maximized');
+                windowStates[windowId] = 'normal';
+            } else {
+                window.classList.add('maximized');
+                windowStates[windowId] = 'maximized';
+            }
+        }
+
+        function toggleStartMenu() {
+            const startMenu = windows['start-menu'];
+            if (startMenu.classList.contains('hidden')) {
+                openWindow('start-menu');
+                // Position start menu correctly
+                startMenu.style.left = '0px';
+                startMenu.style.top = 'auto';
+                startMenu.style.bottom = '40px';
+                startMenu.style.zIndex = '2000';
+            } else {
+                closeWindow('start-menu');
+            }
+        }
+
+        // Taskbar management
+        function addToTaskbar(windowId) {
+            const taskbarItems = document.getElementById('taskbarItems');
+            const window = windows[windowId];
+            const title = window.querySelector('.title-text').textContent;
+            
+            // Check if already in taskbar
+            if (document.getElementById(`taskbar-${windowId}`)) {
+                updateTaskbarItem(windowId);
+                return;
+            }
+            
+            const taskbarItem = document.createElement('div');
+            taskbarItem.className = 'taskbar-item';
+            taskbarItem.id = `taskbar-${windowId}`;
+            taskbarItem.textContent = title;
+            taskbarItem.onclick = () => {
+                if (windowStates[windowId] === 'minimized') {
+                    openWindow(windowId);
+                } else {
+                    minimizeWindow(windowId);
+                }
+            };
+            
+            taskbarItems.appendChild(taskbarItem);
+            updateTaskbarItem(windowId);
+        }
+
+        function removeFromTaskbar(windowId) {
+            const taskbarItem = document.getElementById(`taskbar-${windowId}`);
+            if (taskbarItem) {
+                taskbarItem.remove();
+            }
+        }
+
+        function updateTaskbarItem(windowId) {
+            const taskbarItem = document.getElementById(`taskbar-${windowId}`);
+            if (!taskbarItem) return;
+            
+            const window = windows[windowId];
+            if (windowStates[windowId] === 'minimized' || window.classList.contains('hidden')) {
+                taskbarItem.classList.remove('active');
+            } else {
+                taskbarItem.classList.add('active');
+            }
+        }
+
+
+        // Folder toggle function
+        function toggleFolder(element) {
+            element.classList.toggle('open');
+        }
+
+        // Update clock
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update clock every minute
+            updateClock();
+            setInterval(updateClock, 60000);
+            
+            // Bring window to front when clicked
+            document.querySelectorAll('.window').forEach(window => {
+                window.addEventListener('mousedown', (e) => {
+                    // Don't bring to front if clicking on title bar (handled by drag)
+                    if (e.target.closest('.title-bar')) return;
+                    bringWindowToFront(window);
+                });
+            });
+            
+            // Close start menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const startMenu = windows['start-menu'];
+                if (!startMenu.classList.contains('hidden')) {
+                    if (!e.target.closest('#start-menu') && !e.target.closest('.start-btn')) {
+                        closeWindow('start-menu');
+                    }
+                }
+            });
+            
+            // Open My Computer by default
+            openWindow('my-computer');
+        });
+    </script>
+
+</body></html>
