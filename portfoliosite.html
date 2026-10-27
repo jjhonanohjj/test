@@ -6,82 +6,119 @@
     <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 0 10px;
-            border-bottom: 1px solid #777;
-            text-align: center;
-        }
-        nav ul {
-            display: none;
-            list-style: none;
-            padding: 0;
-        }
-        nav li {
-            float: left;
-            padding: 12px 20px;
-            display: inline-block;
-            background-color: #eee;
-            border-bottom: 1px solid #ddd;
-            color: #333;
-            cursor: pointer;
-        }
-        nav li a {
-            color: #333;
-            text-decoration: none;
-        }
-        nav li:hover {
-            background-color: #ddd;
-            border-bottom: 1px solid #ccc;
-        }
-        .main-content {
-            margin-top: 60px;
-            padding: 20px;
-        }
-        .portfolio-section {
-            margin-bottom: 30px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .portfolio-img {
-            display: block;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            max-width: 400px;
-        }
-        .portfolio-img:hover {
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-        .portfolio-content {
-            margin: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .portfolio-link {
-            color: #333;
-            text-decoration: none;
-        }
-        .portfolio-link:hover {
-            color: #000;
-            text-decoration: underline;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 0 10px;
+    border-bottom: 1px solid #777;
+    text-align: center;
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    padding: 12px 20px;
+    display: inline-block;
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    cursor: pointer;
+}
+
+nav li a {
+    color: #333;
+    text-decoration: none;
+}
+
+nav li:hover {
+    background-color: #ddd;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-content {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-img {
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-img:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-content {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.portfolio-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.portfolio-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: left;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
     </style>
 </head>
 <body>
