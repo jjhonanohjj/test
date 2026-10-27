@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 0 10px;
+            border-bottom: 1px solid #777;
+            text-align: center;
+        }
+        nav ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            float: left;
+            padding: 12px 20px;
+            display: inline-block;
+            background-color: #eee;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+            cursor: pointer;
+        }
+        nav li a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav li:hover {
+            background-color: #ddd;
+            border-bottom: 1px solid #ccc;
+        }
+        .main-content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        .portfolio-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .portfolio-img {
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+        }
+        .portfolio-img:hover {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-content {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .portfolio-link {
+            color: #333;
+            text-decoration: none;
+        }
+        .portfolio-link:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li class="portfolio-link"><a href="#portfolio">Portfolio</a></li>
+                    <li class="portfolio-link"><a href="#contact">Contact</a></li>
+                    <li class="portfolio-link"><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <!-- Portfolio section -->
+            <div class="portfolio-section">
+                <img class="portfolio-img" src="path/to/your/portfolio/image.jpg" alt="Portfolio Image">
+                <div class="portfolio-content">
+                    <h2>Portfolio Image Description</h2>
+                    <p>Your portfolio image description here.</p>
+                </div>
+            </div>
+            <!-- Repeat the above structure for additional portfolio images -->
+
+            <!-- Contact section -->
+            <div class="portfolio-section">
+                <!-- Contact image and content here -->
+            </div>
+
+            <!-- About section -->
+            <div class="portfolio-section">
+                <!-- About image and content here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
